@@ -1,6 +1,7 @@
-# Multilevel modelling with R: An introduction with applications on wearable & mobile-based intensive longitudinal data
+# Multilevel modelling with R: 
+## An introduction with applications on wearable & mobile-based intensive longitudinal data
 
-Post-conference workshop at the 17th Conference of the European Academy of Occupational Health Psychology ([EAOHP 2026]((https://helsinki.eaohp.org/))
+Post-conference workshop at the 17th Conference of the European Academy of Occupational Health Psychology ([EAOHP 2026](https://helsinki.eaohp.org/))
 
 ## Abstract
 
@@ -8,6 +9,20 @@ The R programming environment offers powerful and open-source tools for modellin
 
 Facilitator: Luca Menghini, Assistant Professor of the Department of General Psychology and Human-Inspired Technology Research Centre at the University of Padova
 
-## Materials
+🔥 Powered by [Psicostat](https://psicostat.github.io/) 
+
+## 📁 Materials 
 
 [Click here to access the workshop materials](Slides.html)
+
+## 📚 Workshop outline
+
+- ILD × OHP: Investigating within-person relationships of stressors & strain
+
+- R basics: Warm up & loading data
+
+- LMER intro: From linear models to multilevel modelling 
+
+- HandZone: From data pre-processing to cross-level interactions 
+
+- LMER advanced: 3-level models, growth curve and cross-lagged models, mediation, GLMER
