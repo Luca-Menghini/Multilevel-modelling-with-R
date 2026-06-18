@@ -49,6 +49,16 @@ rm(list = ls())
 library(fontawesome)
 ```
 
+## Course material
+
+<br> 
+
+Course material is available on GitHub: 
+
+<br>
+
+> [https://luca-menghini.github.io/Multilevel-modelling-with-R/](https://luca-menghini.github.io/Multilevel-modelling-with-R/)
+
 ## About myself
 
 :::: {.columns}
@@ -1135,6 +1145,12 @@ text(x=min(x)+0.5,y=min(y)+0.5,labels=paste("B1 =",round(summary(lm(y~x))$coeffi
 
 ## Linear models in `r fa("r-project", height = "1em",fill="#4657A9")` {.smaller}
 
+
+```{r}
+m <- lm( SBP_aft ~ WHLSM1, data = dat )
+```
+
+
 :::: {.columns}
 
 ::: {.column width="50%"}
@@ -1158,7 +1174,7 @@ m2 <- lm( y ~ x1 + x2 + x3 + ...,
   ```{r}
   #| echo: true
   # fit model
-  m <- lm( SBP_aft ~ WHLSM1, data = dat)
+  m <- lm( SBP_aft ~ WHLSM1, data = dat )
   
   # results
   summary(m)$coefficients
@@ -1170,7 +1186,6 @@ m2 <- lm( y ~ x1 + x2 + x3 + ...,
 
 ```{r}
 #| echo: true
-#| eval: false
 # fit and assumptions
 par(mfrow=c(2,2),mai=rep(0.3,4)); plot(m)
 ```
@@ -1384,7 +1399,6 @@ plot_model(m1, type="pred", terms=c("anxiety", "Person"),
   ylab("Burnout") + xlab("Workload") +
   geom_point(data=cbind(itp, group_col=itp$Person), 
              aes(anxiety, math_grade)) + 
-  ylim(6.5, 9.5) +
   theme_minimal()
 ```
 
@@ -1410,7 +1424,6 @@ plot_model(m2, type="pred", terms=c("anxiety", "Person"),
            ci.lvl=NA, pred.type = "re", title ="") +
   ylab("Burnout") + xlab("Workload") +
   geom_point(data=cbind(itp, group_col=itp$Person), aes(anxiety, math_grade)) + 
-  ylim(6.5, 9.5) +
   theme_minimal()
 ```
 
@@ -1886,6 +1899,8 @@ plot_model(m3, type="pred", terms=c("SW_pmc","gender")) +
 :::: {.columns}
 ::: {.column width="50%"}
 
+::: {style="font-size: 0.8em;"}
+
 - `lme4` doesn't output *p*-values because <br> calculating exact degrees of freedom in <br> LMER is controversial <br> 
 [Bates (2010)](https://people.math.ethz.ch/~maechler/MEMo-pages/lMMwR_2018-03-05.pdf){style="font-size: 18px;"}
 
@@ -1905,10 +1920,12 @@ plot_model(m3, type="pred", terms=c("SW_pmc","gender")) +
   ```
   ![](img/pvalue.PNG){width="270px"}
 
-
+:::
 :::
 
 ::: {.column width="50%"}
+
+::: {style="font-size: 0.8em;"}
 
 - A more rigorous way to get p-values: <br> **Model comparison with likelihood ratio test**:
 
@@ -1931,6 +1948,7 @@ plot_model(m3, type="pred", terms=c("SW_pmc","gender")) +
   AIC(m0,m1,m2)
   ```
 
+:::
 :::
 
 ::::
@@ -1958,7 +1976,7 @@ gridExtra::grid.arrange(p[[1]],p[[2]]$ID,p[[3]],p[[4]],nrow=2)
 :::: {.columns}
 ::: {.column width="60%"}
 
-- **Influential case** = Observation (or entire cluster)  that has a disproportionately large impact on your model. If you exclude this case, your parameter estimates (such as fixed slopes, standard errors, or p-values) change significantly.
+**Influential case** = Observation (or entire cluster)  that has a disproportionately large impact on your model. If you exclude this case, your parameter estimates (such as fixed slopes, standard errors, or p-values) change significantly.
 
 ```{r}
 subsamp <- dat[dat$ID %in% unique(dat$ID)[1:70],]
@@ -1970,7 +1988,7 @@ m2 <- lmer(SBP_aft ~ SW_pmc + gender + ( 1 | ID),
 #| eval: false
 library(influence.ME)
 infl <- influence(m2, group = "ID")
-plot(infl, "cook", xlab="Cook distance", ylab="ID")
+plot(infl, "cook")
 ```
 
 :::
@@ -2023,6 +2041,8 @@ hrv
 
 :::
 ::: {.column .fragment width="50%"}
+
+<br>
 
 Example: Overnight heart rate variability (`rmssd`) measured each 5 minutes from sleep onset within multiple `night`s, in their turn nested within participants (`ID`).
 
@@ -2225,10 +2245,10 @@ m <- glmer(nightwork_YesNo ~ workload_pmc + (1 | ID),
 :::: {.columns}
 ::: {.column width="40%"}
 
-![](img/psicostat.png){width="350px"}
+![](img/psicostat.png){width="150px"}
 
 :::
-::: {.column width="60%"}
+::: {.column .nonincremental width="60%"}
 
 We are an interdisciplinary research group interested in Psychology and Statistics, working in areas related to quantitative psychology, psychometrics, psychological testing and statistics. Our goal is to promote the connection between the two fields in order to benefit the progress of scientific research.
 
