@@ -1,5 +1,5 @@
 # Multilevel modelling with R: 
-## An introduction with applications on wearable & mobile-based intensive longitudinal data
+## An introduction with applications on wearable & mobile-based <br> intensive longitudinal data
 
 Post-conference workshop at the 17th Conference of the European Academy of Occupational Health Psychology ([EAOHP 2026](https://helsinki.eaohp.org/))
 
