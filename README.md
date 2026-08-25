@@ -13,7 +13,7 @@ Facilitator: Luca Menghini, Assistant Professor of the Department of General Psy
 
 ## 📁 Materials 
 
-[Click here to access the workshop materials](https://luca-menghini.github.io/Multilevel-modelling-with-R/)
+[Click here to access the workshop materials](https://luca-menghini.github.io/Multilevel-modelling-with-R/Slides.html#/title-slide)
 
 ## 📚 Workshop outline
 
